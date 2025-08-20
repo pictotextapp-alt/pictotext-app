@@ -1,0 +1,2050 @@
+
+--- 2025-08-19T16:06:39.889Z debug
+🪵  Writing logs to "/home/runner/workspace/.config/.wrangler/logs/wrangler-2025-08-19_16-06-39_732.log"
+---
+
+--- 2025-08-19T16:06:39.889Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command started","timestamp":1755619599888,"properties":{"amplitude_session_id":1755619599887,"amplitude_event_id":0,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true}}}
+---
+
+--- 2025-08-19T16:06:39.900Z debug
+Failed to load .env file "/home/runner/workspace/.env": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env'
+}
+---
+
+--- 2025-08-19T16:06:39.900Z debug
+Failed to load .env file "/home/runner/workspace/.env.local": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env.local'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env.local'
+}
+---
+
+--- 2025-08-19T16:06:39.924Z log
+
+ ⛅️ wrangler 4.31.0
+───────────────────
+---
+
+--- 2025-08-19T16:06:39.946Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/memberships
+---
+
+--- 2025-08-19T16:06:39.946Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:39.946Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:39.946Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:39.946Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-19T16:06:40.729Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-19T16:06:40.730Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:40.730Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:40.730Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-19T16:06:40.732Z debug
+Saving to cache: {"account":{"id":"0bde2a2a6cf822595f4b95542f0e8049","name":"Wealthmasteryguide@gmail.com's Account"}}
+---
+
+--- 2025-08-19T16:06:40.733Z debug
+Starting verifyWorkerMatchesCITag() with tag: undefined, name: pictotext-backend
+---
+
+--- 2025-08-19T16:06:40.733Z debug
+No WRANGLER_CI_MATCH_TAG variable provided, aborting verifyWorkerMatchesCITag()
+---
+
+--- 2025-08-19T16:06:40.734Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/0bde2a2a6cf822595f4b95542f0e8049/workers/services/pictotext-backend
+---
+
+--- 2025-08-19T16:06:40.734Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:40.734Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:40.734Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:40.734Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-19T16:06:41.135Z debug
+-- START CF API RESPONSE: Not Found 404
+---
+
+--- 2025-08-19T16:06:41.135Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.135Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.135Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-19T16:06:41.137Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/0bde2a2a6cf822595f4b95542f0e8049/workers/scripts/pictotext-backend/deployments
+---
+
+--- 2025-08-19T16:06:41.137Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.137Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.137Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.137Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-19T16:06:41.269Z debug
+-- START CF API RESPONSE: Not Found 404
+---
+
+--- 2025-08-19T16:06:41.269Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.269Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-19T16:06:41.269Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-19T16:06:41.957Z log
+
+---
+
+--- 2025-08-19T16:06:41.986Z error
+✘ [ERROR] Build failed with 156 errors:
+
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/config/config-chain.js:10:23:
+        10 │   const data = require("path");
+           ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/config/item.js:10:23:
+        10 │   const data = require("path");
+           ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/config/partial.js:9:23:
+        9 │   const data = require("path");
+          ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/config/pattern-to-regex.js:8:23:
+        8 │   const data = require("path");
+          ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/@babel/core/lib/transformation/normalize-file.js:8:23:
+        8 │   const data = require("fs");
+          ╵                        ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/transformation/normalize-file.js:15:23:
+        15 │   const data = require("path");
+           ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/core/lib/transformation/normalize-opts.js:8:23:
+        8 │   const data = require("path");
+          ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "assert"
+  
+      node_modules/@babel/helper-module-imports/lib/import-builder.js:7:22:
+        7 │ var _assert = require("assert");
+          ╵                       ~~~~~~~~
+  
+    The package "assert" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "assert"
+  
+      node_modules/@babel/helper-module-imports/lib/import-injector.js:7:22:
+        7 │ var _assert = require("assert");
+          ╵                       ~~~~~~~~
+  
+    The package "assert" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "assert"
+  
+      node_modules/@babel/helper-module-transforms/lib/index.js:46:22:
+        46 │ var _assert = require("assert");
+           ╵                       ~~~~~~~~
+  
+    The package "assert" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@babel/helper-module-transforms/lib/normalize-and-load-metadata.js:10:20:
+        10 │ var _path = require("path");
+           ╵                     ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs/promises"
+  
+      node_modules/@replit/vite-plugin-cartographer/dist/index.mjs:2:15:
+        2 │ import fs from "fs/promises";
+          ╵                ~~~~~~~~~~~~~
+  
+    The package "fs/promises" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/@replit/vite-plugin-cartographer/dist/index.mjs:3:17:
+        3 │ import path from "path";
+          ╵                  ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/@replit/vite-plugin-cartographer/dist/index.mjs:4:30:
+        4 │ import { fileURLToPath } from "url";
+          ╵                               ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/bcrypt/bcrypt.js:1:21:
+        1 │ const path = require('path');
+          ╵                      ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/bcrypt/bcrypt.js:4:23:
+        4 │ const crypto = require('crypto');
+          ╵                        ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "zlib"
+  
+      node_modules/body-parser/lib/read.js:20:19:
+        20 │ var zlib = require('zlib')
+           ╵                    ~~~~~~
+  
+    The package "zlib" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/body-parser/lib/types/urlencoded.js:251:20:
+        251 │       mod = require('querystring')
+            ╵                     ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/busboy/lib/types/multipart.js:3:39:
+        3 │ const { Readable, Writable } = require('stream');
+          ╵                                        ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/busboy/lib/types/urlencoded.js:3:29:
+        3 │ const { Writable } = require('stream');
+          ╵                              ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/content-disposition/index.js:22:23:
+        22 │ var basename = require('path').basename
+           ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/cookie-signature/index.js:5:21:
+        5 │ var crypto = require('crypto');
+          ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/destroy/index.js:15:27:
+        15 │ var EventEmitter = require('events').EventEmitter
+           ╵                            ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/destroy/index.js:16:25:
+        16 │ var ReadStream = require('fs').ReadStream
+           ╵                          ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/destroy/index.js:17:21:
+        17 │ var Stream = require('stream')
+           ╵                      ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "zlib"
+  
+      node_modules/destroy/index.js:18:19:
+        18 │ var Zlib = require('zlib')
+           ╵                    ~~~~~~
+  
+    The package "zlib" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "child_process"
+  
+      node_modules/detect-libc/lib/detect-libc.js:6:29:
+        6 │ const childProcess = require('child_process');
+          ╵                              ~~~~~~~~~~~~~~~
+  
+    The package "child_process" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/detect-libc/lib/filesystem.js:6:19:
+        6 │ const fs = require('fs');
+          ╵                    ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/etag/index.js:21:21:
+        21 │ var crypto = require('crypto')
+           ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/etag/index.js:22:20:
+        22 │ var Stats = require('fs').Stats
+           ╵                     ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/express-session/index.js:18:21:
+        18 │ var crypto = require('crypto')
+           ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/express-session/node_modules/cookie-signature/index.js:5:21:
+        5 │ var crypto = require('crypto');
+          ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/express-session/session/memory.js:17:19:
+        17 │ var util = require('util')
+           ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/express-session/session/store.js:16:27:
+        16 │ var EventEmitter = require('events').EventEmitter
+           ╵                            ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/express-session/session/store.js:18:19:
+        18 │ var util = require('util')
+           ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/express/lib/application.js:23:19:
+        23 │ var http = require('http');
+           ╵                    ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/express/lib/application.js:30:22:
+        30 │ var resolve = require('path').resolve;
+           ╵                       ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/express/lib/express.js:16:27:
+        16 │ var EventEmitter = require('events').EventEmitter;
+           ╵                            ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "net"
+  
+      node_modules/express/lib/request.js:18:19:
+        18 │ var isIP = require('net').isIP;
+           ╵                    ~~~~~
+  
+    The package "net" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/express/lib/request.js:20:19:
+        20 │ var http = require('http');
+           ╵                    ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/express/lib/response.js:21:19:
+        21 │ var http = require('http');
+           ╵                    ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/express/lib/response.js:24:19:
+        24 │ var path = require('path');
+           ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/express/lib/utils.js:24:26:
+        24 │ var querystring = require('querystring');
+           ╵                           ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/express/lib/view.js:17:19:
+        17 │ var path = require('path');
+           ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/express/lib/view.js:18:17:
+        18 │ var fs = require('fs');
+           ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "../pkg"
+  
+      node_modules/lightningcss/node/index.js:17:27:
+        17 │   module.exports = require(`../pkg`);
+           ╵                            ~~~~~~~~
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/mime-types/index.js:16:22:
+        16 │ var extname = require('path').extname
+           ╵                       ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/mime/mime.js:1:19:
+        1 │ var path = require('path');
+          ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/mime/mime.js:2:17:
+        2 │ var fs = require('fs');
+          ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/mkdirp/index.js:1:19:
+        1 │ var path = require('path');
+          ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/mkdirp/index.js:2:17:
+        2 │ var fs = require('fs');
+          ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/multer/lib/counter.js:1:27:
+        1 │ var EventEmitter = require('events').EventEmitter
+          ╵                            ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/multer/lib/multer-error.js:1:19:
+        1 │ var util = require('util')
+          ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/multer/storage/disk.js:1:17:
+        1 │ var fs = require('fs')
+          ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/multer/storage/disk.js:2:17:
+        2 │ var os = require('os')
+          ╵                  ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/multer/storage/disk.js:3:19:
+        3 │ var path = require('path')
+          ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/multer/storage/disk.js:4:21:
+        4 │ var crypto = require('crypto')
+          ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/node-gyp-build/node-gyp-build.js:1:17:
+        1 │ var fs = require('fs')
+          ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/node-gyp-build/node-gyp-build.js:2:19:
+        2 │ var path = require('path')
+          ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/node-gyp-build/node-gyp-build.js:3:17:
+        3 │ var os = require('os')
+          ╵                  ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/oauth/lib/oauth.js:1:20:
+        1 │ var crypto= require('crypto'),
+          ╵                     ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/oauth/lib/oauth.js:3:18:
+        3 │     http= require('http'),
+          ╵                   ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "https"
+  
+      node_modules/oauth/lib/oauth.js:4:19:
+        4 │     https= require('https'),
+          ╵                    ~~~~~~~
+  
+    The package "https" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/oauth/lib/oauth.js:5:17:
+        5 │     URL= require('url'),
+          ╵                  ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/oauth/lib/oauth.js:6:25:
+        6 │     querystring= require('querystring'),
+          ╵                          ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/oauth/lib/oauth2.js:1:25:
+        1 │ var querystring= require('querystring'),
+          ╵                          ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/oauth/lib/oauth2.js:2:20:
+        2 │     crypto= require('crypto'),
+          ╵                     ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "https"
+  
+      node_modules/oauth/lib/oauth2.js:3:19:
+        3 │     https= require('https'),
+          ╵                    ~~~~~~~
+  
+    The package "https" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/oauth/lib/oauth2.js:4:18:
+        4 │     http= require('http'),
+          ╵                   ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/oauth/lib/oauth2.js:5:17:
+        5 │     URL= require('url'),
+          ╵                  ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/on-headers/index.js:16:19:
+        16 │ var http = require('http')
+           ╵                    ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/parseurl/index.js:15:18:
+        15 │ var url = require('url')
+           ╵                   ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/passport-google-oauth20/lib/strategy.js:3:19:
+        3 │   , util = require('util')
+          ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/passport-google-oauth20/lib/strategy.js:4:18:
+        4 │   , uri = require('url')
+          ╵                   ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/passport-oauth2/lib/strategy.js:3:18:
+        3 │   , url = require('url')
+          ╵                   ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/passport-oauth2/lib/strategy.js:5:21:
+        5 │   , crypto = require('crypto')
+          ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/passport-oauth2/lib/strategy.js:7:19:
+        7 │   , util = require('util')
+          ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/passport/lib/middleware/authenticate.js:4:19:
+        4 │ var http = require('http')
+          ╵                    ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/passport/lib/strategies/session.js:3:19:
+        3 │   , util = require('util')
+          ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/random-bytes/index.js:14:21:
+        14 │ var crypto = require('crypto')
+           ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/readable-stream/lib/_stream_readable.js:33:17:
+        33 │ var EE = require('events').EventEmitter;
+           ╵                  ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/readable-stream/lib/internal/streams/stream-browser.js:1:25:
+        1 │ module.exports = require('events').EventEmitter;
+          ╵                          ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/rollup/dist/es/rollup.js:14:7:
+        14 │ import 'path';
+           ╵        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/rollup/dist/es/rollup.js:18:7:
+        18 │ import 'tty';
+           ╵        ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/rollup/dist/es/shared/node-entry.js:12:50:
+        12 │ import { posix, win32, isAbsolute, resolve } from 'path';
+           ╵                                                   ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/rollup/dist/es/shared/node-entry.js:17:21:
+        17 │ import * as tty from 'tty';
+           ╵                      ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/rollup/dist/es/shared/watch.js:13:25:
+        13 │ import require$$0$1 from 'path';
+           ╵                          ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/rollup/dist/es/shared/watch.js:14:25:
+        14 │ import require$$0$2 from 'fs';
+           ╵                          ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/rollup/dist/es/shared/watch.js:15:23:
+        15 │ import require$$2 from 'util';
+           ╵                        ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/rollup/dist/es/shared/watch.js:16:23:
+        16 │ import require$$1 from 'stream';
+           ╵                        ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/rollup/dist/es/shared/watch.js:17:25:
+        17 │ import require$$2$1 from 'os';
+           ╵                          ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/rollup/dist/es/shared/watch.js:18:25:
+        18 │ import require$$0$3 from 'events';
+           ╵                          ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/rollup/dist/es/shared/watch.js:24:7:
+        24 │ import 'tty';
+           ╵        ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/send/index.js:23:17:
+        23 │ var fs = require('fs')
+           ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/send/index.js:28:19:
+        28 │ var path = require('path')
+           ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/send/index.js:30:21:
+        30 │ var Stream = require('stream')
+           ╵                      ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/send/index.js:31:19:
+        31 │ var util = require('util')
+           ╵                    ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/serve-static/index.js:19:22:
+        19 │ var resolve = require('path').resolve
+           ╵                       ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/serve-static/index.js:21:18:
+        21 │ var url = require('url')
+           ╵                   ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/uid2/index.js:5:21:
+        5 │ var crypto = require('crypto');
+          ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:10:25:
+        10 │ import require$$0$3 from 'tty';
+           ╵                          ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:11:212:
+        11 │ ...n as join$1, sep as sep$1, normalize as normalize$1 } from 'path';
+           ╵                                                               ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:14:30:
+        14 │ import * as require$$0$2 from 'fs';
+           ╵                               ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:22:25:
+        22 │ import require$$0$5 from 'util';
+           ╵                          ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "net"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:23:25:
+        23 │ import require$$4$1 from 'net';
+           ╵                          ~~~~~
+  
+    The package "net" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:24:25:
+        24 │ import require$$0$7 from 'events';
+           ╵                          ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:25:25:
+        25 │ import require$$0$9 from 'url';
+           ╵                          ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:26:23:
+        26 │ import require$$1 from 'http';
+           ╵                        ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:27:25:
+        27 │ import require$$0$6 from 'stream';
+           ╵                          ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:28:23:
+        28 │ import require$$2 from 'os';
+           ╵                        ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "child_process"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:29:25:
+        29 │ import require$$2$1 from 'child_process';
+           ╵                          ~~~~~~~~~~~~~~~
+  
+    The package "child_process" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:32:25:
+        32 │ import require$$3$1 from 'crypto';
+           ╵                          ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "module"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:33:63:
+        33 │ ... require$$0$8, { createRequire as createRequire$2 } from 'module';
+           ╵                                                             ~~~~~~~~
+  
+    The package "module" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:39:20:
+        39 │ import * as qs from 'querystring';
+           ╵                     ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "zlib"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:41:19:
+        41 │ import zlib$1 from 'zlib';
+           ╵                    ~~~~~~
+  
+    The package "zlib" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "https"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:43:25:
+        43 │ import require$$1$1 from 'https';
+           ╵                          ~~~~~~~
+  
+    The package "https" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tls"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:44:25:
+        44 │ import require$$4$2 from 'tls';
+           ╵                          ~~~~~
+  
+    The package "tls" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "assert"
+  
+      node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:46:25:
+        46 │ import require$$4$3 from 'assert';
+           ╵                          ~~~~~~~~
+  
+    The package "assert" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/vite/dist/node/chunks/dep-CEGXe0Sr.js:2:32:
+        2 │ import require$$0__default from 'fs';
+          ╵                                 ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/vite/dist/node/chunks/dep-CEGXe0Sr.js:4:25:
+        4 │ import require$$0$1 from 'path';
+          ╵                          ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/vite/dist/node/chunks/dep-CEGXe0Sr.js:5:23:
+        5 │ import require$$3 from 'crypto';
+          ╵                        ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/vite/dist/node/chunks/dep-CEGXe0Sr.js:6:25:
+        6 │ import require$$0$2 from 'util';
+          ╵                          ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/vite/dist/node/chunks/dep-COdkJwUb.js:2:23:
+        2 │ import require$$0 from 'path';
+          ╵                        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/vite/dist/node/chunks/dep-COdkJwUb.js:3:32:
+        3 │ import require$$0__default from 'fs';
+          ╵                                 ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/vite/dist/node/index.js:15:7:
+        15 │ import 'tty';
+           ╵        ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/vite/dist/node/index.js:16:7:
+        16 │ import 'path';
+           ╵        ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/vite/dist/node/index.js:17:7:
+        17 │ import 'fs';
+           ╵        ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "util"
+  
+      node_modules/vite/dist/node/index.js:24:7:
+        24 │ import 'util';
+           ╵        ~~~~~~
+  
+    The package "util" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "net"
+  
+      node_modules/vite/dist/node/index.js:25:7:
+        25 │ import 'net';
+           ╵        ~~~~~
+  
+    The package "net" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "events"
+  
+      node_modules/vite/dist/node/index.js:26:7:
+        26 │ import 'events';
+           ╵        ~~~~~~~~
+  
+    The package "events" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "url"
+  
+      node_modules/vite/dist/node/index.js:27:7:
+        27 │ import 'url';
+           ╵        ~~~~~
+  
+    The package "url" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      node_modules/vite/dist/node/index.js:28:7:
+        28 │ import 'http';
+           ╵        ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "stream"
+  
+      node_modules/vite/dist/node/index.js:29:7:
+        29 │ import 'stream';
+           ╵        ~~~~~~~~
+  
+    The package "stream" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/vite/dist/node/index.js:30:7:
+        30 │ import 'os';
+           ╵        ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "child_process"
+  
+      node_modules/vite/dist/node/index.js:31:7:
+        31 │ import 'child_process';
+           ╵        ~~~~~~~~~~~~~~~
+  
+    The package "child_process" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/vite/dist/node/index.js:34:7:
+        34 │ import 'crypto';
+           ╵        ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "module"
+  
+      node_modules/vite/dist/node/index.js:35:7:
+        35 │ import 'module';
+           ╵        ~~~~~~~~
+  
+    The package "module" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "querystring"
+  
+      node_modules/vite/dist/node/index.js:40:7:
+        40 │ import 'querystring';
+           ╵        ~~~~~~~~~~~~~
+  
+    The package "querystring" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "zlib"
+  
+      node_modules/vite/dist/node/index.js:42:7:
+        42 │ import 'zlib';
+           ╵        ~~~~~~
+  
+    The package "zlib" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "https"
+  
+      node_modules/vite/dist/node/index.js:44:7:
+        44 │ import 'https';
+           ╵        ~~~~~~~
+  
+    The package "https" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tls"
+  
+      node_modules/vite/dist/node/index.js:45:7:
+        45 │ import 'tls';
+           ╵        ~~~~~
+  
+    The package "tls" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "assert"
+  
+      node_modules/vite/dist/node/index.js:47:7:
+        47 │ import 'assert';
+           ╵        ~~~~~~~~
+  
+    The package "assert" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1596:17:
+        1596 │ var fs = require("fs");
+             ╵                  ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "os"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1597:17:
+        1597 │ var os = require("os");
+             ╵                  ~~~~
+  
+    The package "os" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1598:19:
+        1598 │ var path = require("path");
+             ╵                    ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "child_process"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1784:28:
+        1784 │ var child_process = require("child_process");
+             ╵                             ~~~~~~~~~~~~~~~
+  
+    The package "child_process" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1785:21:
+        1785 │ var crypto = require("crypto");
+             ╵                      ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "tty"
+  
+      node_modules/vite/node_modules/esbuild/lib/main.js:1789:18:
+        1789 │ var tty = require("tty");
+             ╵                   ~~~~~
+  
+    The package "tty" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      server/free-usage-service.ts:2:19:
+        2 │ import crypto from "crypto";
+          ╵                    ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "crypto"
+  
+      server/premium-service.ts:6:27:
+        6 │ import { randomUUID } from "crypto";
+          ╵                            ~~~~~~~~
+  
+    The package "crypto" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "http"
+  
+      server/routes.ts:2:42:
+        2 │ import { createServer, type Server } from "http";
+          ╵                                           ~~~~~~
+  
+    The package "http" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "fs"
+  
+      server/vite.ts:2:15:
+        2 │ import fs from "fs";
+          ╵                ~~~~
+  
+    The package "fs" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      server/vite.ts:3:17:
+        3 │ import path from "path";
+          ╵                  ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Could not resolve "path"
+  
+      vite.config.ts:3:17:
+        3 │ import path from "path";
+          ╵                  ~~~~~~
+  
+    The package "path" wasn't found on the file system but is built into node.
+    - Make sure to prefix the module name with "node:" or update your compatibility_date to
+  2024-09-23 or later.
+  
+  
+  
+  ✘ [ERROR] Top-level await is currently not supported with the
+  "iife" output format
+  
+      vite.config.ts:13:10:
+        13 │           await import("@replit/vite-plugin-cartographer").then((m...
+           ╵           ~~~~~
+  
+  
+  ✘ [ERROR] Unexpected external import of "node:assert",
+  "node:buffer", "node:child_process", "node:crypto", "node:dns", "node:events", "node:fs",
+  "node:fs/promises", "node:http", "node:http2", "node:https", "node:module", "node:net", "node:os",
+  "node:path", "node:perf_hooks", "node:process", "node:readline", "node:stream",
+  "node:string_decoder", "node:url", "node:util", "node:v8", "node:worker_threads", and "node:zlib".
+  Your worker has no default export, which means it is assumed to be a Service Worker format Worker.
+  Did you mean to create a ES Module format Worker?
+  If so, try adding `export default { ... }` in your entry-point.
+  See https://developers.cloudflare.com/workers/reference/migrate-to-module-workers/.
+  [plugin nodejs_compat-imports]
+  
+  
+
+
+---
+
+--- 2025-08-19T16:06:41.997Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command errored","timestamp":1755619601997,"properties":{"amplitude_session_id":1755619599887,"amplitude_event_id":1,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true},"durationMs":2133,"durationSeconds":2.133,"durationMinutes":0.03555,"errorType":"BuildFailure"}}
+---

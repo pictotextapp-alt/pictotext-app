@@ -1,0 +1,93 @@
+
+--- 2025-08-19T13:17:58.067Z debug
+🪵  Writing logs to "/home/runner/workspace/.config/.wrangler/logs/wrangler-2025-08-19_13-17-57_906.log"
+---
+
+--- 2025-08-19T13:17:58.067Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command started","timestamp":1755609478067,"properties":{"amplitude_session_id":1755609478064,"amplitude_event_id":0,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":true,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler pages deploy","args":{"xJsonConfig":true,"j":true,"uploadSourceMaps":false,"directory":"<REDACTED>"}}}
+---
+
+--- 2025-08-19T13:17:58.079Z debug
+Failed to load .env file "/home/runner/workspace/.env": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env'
+}
+---
+
+--- 2025-08-19T13:17:58.079Z debug
+Failed to load .env file "/home/runner/workspace/.env.local": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env.local'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env.local'
+}
+---
+
+--- 2025-08-19T13:17:58.491Z log
+
+ ⛅️ wrangler 4.31.0
+───────────────────
+---
+
+--- 2025-08-19T13:17:58.534Z warn
+▲ [WARNING] Pages now has wrangler.toml support.
+
+  We detected a configuration file at /home/runner/workspace/wrangler.toml but it is missing the
+  "pages_build_output_dir" field, required by Pages.
+  If you would like to use this configuration file to deploy your project, please use
+  "pages_build_output_dir" to specify the directory of static files to upload.
+  Ignoring configuration file for now, and proceeding with project deploy.
+
+
+---
+
+--- 2025-08-19T13:17:58.535Z log
+Attempting to login via OAuth...
+---
+
+--- 2025-08-19T13:17:58.543Z log
+Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20queues%3Awrite%20pipelines%3Awrite%20secrets_store%3Awrite%20containers%3Awrite%20cloudchamber%3Awrite%20offline_access&state=uTtROZEyrxxurUZnjyvm-vB0t3C~Pisj&code_challenge=PS9nYW-Oa3BVOYwDhUy-Oh16utZ8urrJGYG9jLEk8nM&code_challenge_method=S256
+---
+
+--- 2025-08-19T13:19:58.573Z log
+
+---
+
+--- 2025-08-19T13:19:58.574Z error
+✘ [ERROR] Timed out waiting for authorization code, please try again.
+
+
+---
+
+--- 2025-08-19T13:19:58.575Z debug
+Error: Timed out waiting for authorization code, please try again.
+    at Timeout.<anonymous> (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:49062:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+---
+
+--- 2025-08-19T13:19:58.576Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command errored","timestamp":1755609598576,"properties":{"amplitude_session_id":1755609478064,"amplitude_event_id":1,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler pages deploy","args":{"xJsonConfig":true,"j":true,"uploadSourceMaps":false,"directory":"<REDACTED>"},"durationMs":120532,"durationSeconds":120.532,"durationMinutes":2.0088666666666666,"errorType":"UserError"}}
+---

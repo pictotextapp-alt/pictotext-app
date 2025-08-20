@@ -1,0 +1,22 @@
+
+--- 2025-08-19T13:22:02.173Z debug
+🪵  Writing logs to "/home/runner/workspace/.config/.wrangler/logs/wrangler-2025-08-19_13-22-02_027.log"
+---
+
+--- 2025-08-19T13:22:02.173Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command started","timestamp":1755609722173,"properties":{"amplitude_session_id":1755609722171,"amplitude_event_id":0,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":["remote"],"argsCombination":"remote","command":"wrangler login","args":{"remote":true,"xJsonConfig":true,"j":true,"browser":true,"callbackHost":"<REDACTED>","callbackPort":8976}}}
+---
+
+--- 2025-08-19T13:22:02.184Z log
+
+---
+
+--- 2025-08-19T13:22:02.223Z error
+✘ [ERROR] Unknown argument: remote
+
+
+---
+
+--- 2025-08-19T13:22:02.250Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command errored","timestamp":1755609722250,"properties":{"amplitude_session_id":1755609722171,"amplitude_event_id":1,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":["remote"],"argsCombination":"remote","command":"wrangler login","args":{"remote":true,"xJsonConfig":true,"j":true,"browser":true,"callbackHost":"<REDACTED>","callbackPort":8976},"durationMs":101,"durationSeconds":0.101,"durationMinutes":0.0016833333333333333,"errorType":"CommandLineArgsError","errorMessage":"yargs validation error"}}
+---

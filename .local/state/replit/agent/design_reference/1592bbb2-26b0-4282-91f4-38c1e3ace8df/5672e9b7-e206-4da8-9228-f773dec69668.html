@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextExtract Pro - AI-Powered Text Recognition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    animation: {
+                        'slide-in': 'slideIn 0.3s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .upload-zone {
+            transition: all 0.3s ease;
+        }
+        .upload-zone:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-inter bg-slate-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-file-text text-2xl text-primary-600 mr-3"></i>
+                        <span class="font-bold text-xl text-slate-900">TextExtract Pro</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-slate-900 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <i class="fas fa-home mr-2"></i>Home
+                        </a>
+                        <a href="#upload" class="nav-link text-slate-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <i class="fas fa-upload mr-2"></i>Upload
+                        </a>
+                        <a href="#extract" class="nav-link text-slate-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <i class="fas fa-magic mr-2"></i>Extract Text
+                        </a>
+                        <a href="#history" class="nav-link text-slate-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <i class="fas fa-history mr-2"></i>History
+                        </a>
+                        <a href="#settings" class="nav-link text-slate-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <i class="fas fa-cog mr-2"></i>Settings
+                        </a>
+                        <a href="#premium" class="nav-link bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-primary-700 hover:to-primary-800 transition-all">
+                            <i class="fas fa-crown mr-2"></i>Premium
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none focus:text-slate-900 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-1">
+                    <a href="#home" class="mobile-nav-link text-slate-900 block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-home mr-3"></i>Home
+                    </a>
+                    <a href="#upload" class="mobile-nav-link text-slate-600 block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-upload mr-3"></i>Upload
+                    </a>
+                    <a href="#extract" class="mobile-nav-link text-slate-600 block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-magic mr-3"></i>Extract Text
+                    </a>
+                    <a href="#history" class="mobile-nav-link text-slate-600 block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-history mr-3"></i>History
+                    </a>
+                    <a href="#settings" class="mobile-nav-link text-slate-600 block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-cog mr-3"></i>Settings
+                    </a>
+                    <a href="#premium" class="mobile-nav-link bg-gradient-to-r from-primary-600 to-primary-700 text-white block px-3 py-2 rounded-md text-base font-medium mt-2">
+                        <i class="fas fa-crown mr-3"></i>Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Loading State -->
+        <div id="loading" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-40">
+            <div class="text-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+                <p class="mt-4 text-slate-600">Loading...</p>
+            </div>
+        </div>
+
+        <!-- @COMPONENT: HomeSection -->
+        <section id="home-section" class="section section-transition animate-fade-in">
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+                    Extract Text from Any Image
+                    <span class="block text-primary-600">Instantly & Accurately</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+                    Powered by advanced AI technology, TextExtract Pro converts images to editable text with 99.9% accuracy. 
+                    Perfect for documents, screenshots, handwritten notes, and more.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="navigateTo('upload')" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                        <i class="fas fa-upload mr-2"></i>Start Extracting
+                    </button>
+                    <button onclick="navigateTo('premium')" class="border border-slate-300 hover:border-primary-600 text-slate-700 hover:text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                        <i class="fas fa-crown mr-2"></i>View Premium
+                    </button>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-eye text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Advanced OCR</h3>
+                    <p class="text-slate-600">State-of-the-art optical character recognition technology with support for 100+ languages.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Lightning Fast</h3>
+                    <p class="text-slate-600">Process images in seconds with our optimized cloud infrastructure and edge computing.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Secure & Private</h3>
+                    <p class="text-slate-600">Your documents are processed securely and automatically deleted after extraction.</p>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-12 text-white text-center">
+                <h2 class="text-3xl font-bold mb-8">Trusted by Professionals Worldwide</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-4xl font-bold mb-2" data-mock="true">2M+</div>
+                        <div class="text-primary-100">Documents Processed</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" data-mock="true">99.9%</div>
+                        <div class="text-primary-100">Accuracy Rate</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" data-mock="true">150K+</div>
+                        <div class="text-primary-100">Happy Users</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" data-mock="true">100+</div>
+                        <div class="text-primary-100">Languages Supported</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: HomeSection -->
+
+        <!-- @COMPONENT: UploadSection -->
+        <section id="upload-section" class="section section-transition hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Upload Your Document</h1>
+                    <p class="text-xl text-slate-600">Drag and drop your image or click to browse. Supports PNG, JPG, PDF, and more.</p>
+                </div>
+
+                <!-- Upload Zone -->
+                <div class="upload-zone bg-white border-2 border-dashed border-slate-300 rounded-2xl p-12 text-center hover:border-primary-400 hover:bg-slate-50 cursor-pointer mb-8" id="upload-zone">
+                    <div class="mb-6">
+                        <i class="fas fa-cloud-upload-alt text-6xl text-slate-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-700 mb-4">Drop your files here</h3>
+                    <p class="text-slate-500 mb-6">or click to browse from your computer</p>
+                    <button class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-folder-open mr-2"></i>Choose Files
+                    </button>
+                    <input type="file" id="file-input" class="hidden" multiple accept="image/*,.pdf" data-implementation="File upload handling">
+                </div>
+
+                <!-- File Format Support -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">
+                            <i class="fas fa-file-image text-blue-600 mr-2"></i>Supported Formats
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JPG</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PNG</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PDF</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TIFF</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">BMP</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">WEBP</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">
+                            <i class="fas fa-info-circle text-green-600 mr-2"></i>Upload Guidelines
+                        </h3>
+                        <ul class="text-slate-600 space-y-2 text-sm">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Maximum file size: 10MB</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Clear, high-resolution images work best</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Good lighting and contrast recommended</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Upload Progress (Hidden by default) -->
+                <div id="upload-progress" class="hidden bg-white p-6 rounded-xl border border-slate-200">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4">
+                        <i class="fas fa-upload text-blue-600 mr-2"></i>Uploading Files
+                    </h3>
+                    <div class="space-y-4" data-mock="true">
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-600">document.pdf</span>
+                            <span class="text-green-600">100%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: UploadSection -->
+
+        <!-- @COMPONENT: ExtractSection -->
+        <section id="extract-section" class="section section-transition hidden">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Extract Text</h1>
+                    <p class="text-xl text-slate-600">Process your uploaded documents and extract text with AI precision.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Left Panel - Document Preview -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">
+                            <i class="fas fa-image text-blue-600 mr-2"></i>Document Preview
+                        </h3>
+                        <!-- Document preview placeholder showing a sample business document -->
+                        <div class="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center bg-slate-50" data-mock-image="true">
+                            <i class="fas fa-file-alt text-4xl text-slate-400 mb-4"></i>
+                            <p class="text-slate-500" data-mock="true">Upload a document to see preview</p>
+                        </div>
+                        
+                        <!-- Processing Controls -->
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-medium text-slate-700">Language Detection</label>
+                                <select class="border border-slate-300 rounded-md px-3 py-2 text-sm">
+                                    <option>Auto-detect</option>
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-medium text-slate-700">Output Format</label>
+                                <select class="border border-slate-300 rounded-md px-3 py-2 text-sm">
+                                    <option>Plain Text</option>
+                                    <option>Formatted Text</option>
+                                    <option>JSON</option>
+                                    <option>CSV (Tables)</option>
+                                </select>
+                            </div>
+                            <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition-colors" data-event="click:startExtraction">
+                                <i class="fas fa-magic mr-2"></i>Start Extraction
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Extracted Text -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-slate-900">
+                                <i class="fas fa-align-left text-green-600 mr-2"></i>Extracted Text
+                            </h3>
+                            <div class="flex gap-2">
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Download as file">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Text Output Area -->
+                        <div class="relative">
+                            <textarea class="w-full h-96 p-4 border border-slate-300 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500" 
+                                      placeholder="Extracted text will appear here..." 
+                                      data-mock="true" 
+                                      data-bind="extractedText">Sample extracted text would appear here after processing. This is a demonstration of how the extracted content would be displayed in an editable format.</textarea>
+                            
+                            <!-- Processing Indicator -->
+                            <div id="processing-indicator" class="hidden absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center rounded-lg">
+                                <div class="text-center">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                                    <p class="text-slate-600">Processing document...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confidence Score -->
+                        <div class="mt-4 p-4 bg-green-50 rounded-lg" data-mock="true">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-green-800">Confidence Score</span>
+                                <span class="text-sm font-semibold text-green-800">98.7%</span>
+                            </div>
+                            <div class="w-full bg-green-200 rounded-full h-2 mt-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 98.7%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="navigateTo('history')" class="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-save mr-2"></i>Save to History
+                    </button>
+                    <button class="border border-slate-300 hover:border-primary-600 text-slate-700 hover:text-primary-600 px-6 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-edit mr-2"></i>Edit Text
+                    </button>
+                    <button class="border border-slate-300 hover:border-primary-600 text-slate-700 hover:text-primary-600 px-6 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-share mr-2"></i>Share Result
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: ExtractSection -->
+
+        <!-- @COMPONENT: HistorySection -->
+        <section id="history-section" class="section section-transition hidden">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+                    <div>
+                        <h1 class="text-4xl font-bold text-slate-900 mb-4">Extraction History</h1>
+                        <p class="text-xl text-slate-600">View and manage your previous text extractions.</p>
+                    </div>
+                    <div class="flex gap-2 mt-4 sm:mt-0">
+                        <button class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-download mr-2"></i>Export All
+                        </button>
+                        <button class="border border-red-300 hover:border-red-500 text-red-600 hover:text-red-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-trash mr-2"></i>Clear History
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter and Search -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 mb-8">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex-1">
+                            <input type="text" placeholder="Search extractions..." class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+                        <select class="border border-slate-300 rounded-lg px-4 py-2">
+                            <option>All Types</option>
+                            <option>Images</option>
+                            <option>PDFs</option>
+                            <option>Handwritten</option>
+                        </select>
+                        <select class="border border-slate-300 rounded-lg px-4 py-2">
+                            <option>Last 30 days</option>
+                            <option>Last 7 days</option>
+                            <option>Last 3 months</option>
+                            <option>All time</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- History Items -->
+                <!-- @MAP: historyItems.map(item => ( -->
+                <div class="space-y-4 mb-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow" data-mock="true">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-image text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-slate-900" data-bind="item.title">Business_Document_01.pdf</h3>
+                                    <p class="text-sm text-slate-600" data-bind="item.date">Extracted 2 hours ago</p>
+                                    <p class="text-sm text-slate-500" data-bind="item.stats">245 words • 98.5% confidence</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-slate-50 rounded-lg">
+                            <p class="text-sm text-slate-700 line-clamp-2" data-bind="item.preview">This is a preview of the extracted text content from the document. The full text can be viewed by clicking the view button...</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow" data-mock="true">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-image text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-slate-900">Screenshot_Receipt.png</h3>
+                                    <p class="text-sm text-slate-600">Extracted yesterday</p>
+                                    <p class="text-sm text-slate-500">87 words • 96.2% confidence</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-slate-50 rounded-lg">
+                            <p class="text-sm text-slate-700 line-clamp-2">Receipt from Tech Store - Total: $299.99 - Date: 2024-01-15 - Payment method: Credit Card ending in 4532...</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow" data-mock="true">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-pen text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-slate-900">Handwritten_Notes.jpg</h3>
+                                    <p class="text-sm text-slate-600">Extracted 3 days ago</p>
+                                    <p class="text-sm text-slate-500">156 words • 92.8% confidence</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="text-slate-600 hover:text-slate-900 p-2" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-slate-50 rounded-lg">
+                            <p class="text-sm text-slate-700 line-clamp-2">Meeting notes from project discussion - Key points: budget approval, timeline adjustments, team assignments...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP -->
+
+                <!-- Pagination -->
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-slate-600" data-mock="true">Showing 1 to 3 of 24 results</p>
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-2 text-sm border border-slate-300 rounded-md hover:bg-slate-50">Previous</button>
+                        <button class="px-3 py-2 text-sm bg-primary-600 text-white rounded-md">1</button>
+                        <button class="px-3 py-2 text-sm border border-slate-300 rounded-md hover:bg-slate-50">2</button>
+                        <button class="px-3 py-2 text-sm border border-slate-300 rounded-md hover:bg-slate-50">3</button>
+                        <button class="px-3 py-2 text-sm border border-slate-300 rounded-md hover:bg-slate-50">Next</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: HistorySection -->
+
+        <!-- @COMPONENT: SettingsSection -->
+        <section id="settings-section" class="section section-transition hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Settings</h1>
+                    <p class="text-xl text-slate-600">Customize your TextExtract Pro experience.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Account Settings -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+                            <i class="fas fa-user text-blue-600 mr-3"></i>Account Settings
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                                <input type="text" value="John Doe" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                <input type="email" value="john.doe@example.com" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Time Zone</label>
+                                <select class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                    <option>UTC-5 (Eastern Time)</option>
+                                    <option>UTC-8 (Pacific Time)</option>
+                                    <option>UTC+0 (GMT)</option>
+                                    <option>UTC+1 (CET)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Language</label>
+                                <select class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Preferences -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+                            <i class="fas fa-cogs text-green-600 mr-3"></i>Processing Preferences
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-slate-900">Auto-detect Language</h3>
+                                    <p class="text-sm text-slate-600">Automatically detect document language</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked data-mock="true">
+                                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-slate-900">High Accuracy Mode</h3>
+                                    <p class="text-sm text-slate-600">Use advanced processing for better accuracy (slower)</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Default Output Format</label>
+                                <select class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                    <option>Plain Text</option>
+                                    <option>Formatted Text</option>
+                                    <option>JSON</option>
+                                    <option>CSV (Tables)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy & Security -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+                            <i class="fas fa-shield-alt text-purple-600 mr-3"></i>Privacy & Security
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-slate-900">Auto-delete Uploads</h3>
+                                    <p class="text-sm text-slate-600">Automatically delete uploaded files after processing</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked data-mock="true">
+                                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Data Retention Period</label>
+                                <select class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                    <option>30 days</option>
+                                    <option>90 days</option>
+                                    <option>1 year</option>
+                                    <option>Forever</option>
+                                </select>
+                            </div>
+                            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <div class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600 mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-medium text-yellow-800">Two-Factor Authentication</h4>
+                                        <p class="text-sm text-yellow-700 mt-1">Enhance your account security by enabling 2FA.</p>
+                                        <button class="mt-2 text-sm bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition-colors">
+                                            Enable 2FA
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200">
+                        <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+                            <i class="fas fa-bell text-orange-600 mr-3"></i>Notifications
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-slate-900">Email Notifications</h3>
+                                    <p class="text-sm text-slate-600">Receive updates about your extractions</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked data-mock="true">
+                                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-slate-900">Processing Completion</h3>
+                                    <p class="text-sm text-slate-600">Notify when document processing is complete</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked data-mock="true">
+                                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="flex justify-end">
+                        <button class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-save mr-2"></i>Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: SettingsSection -->
+
+        <!-- @COMPONENT: PremiumSection -->
+        <section id="premium-section" class="section section-transition hidden">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-crown mr-2"></i>Premium Features
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+                        Unlock the Full Power of
+                        <span class="block bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">TextExtract Pro</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+                        Get unlimited extractions, advanced features, and priority support with our premium plans.
+                    </p>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Basic Plan -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2">Basic</h3>
+                            <p class="text-slate-600 mb-6">Perfect for occasional use</p>
+                            <div class="text-4xl font-bold text-slate-900 mb-2">
+                                Free
+                            </div>
+                            <p class="text-slate-500">Forever</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">10 extractions per month</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Basic OCR accuracy</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">5MB file size limit</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Standard support</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border border-slate-300 hover:border-primary-600 text-slate-700 hover:text-primary-600 py-3 rounded-lg font-medium transition-colors">
+                            Current Plan
+                        </button>
+                    </div>
+
+                    <!-- Pro Plan (Highlighted) -->
+                    <div class="bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-2xl p-8 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                            <p class="text-primary-100 mb-6">For power users and professionals</p>
+                            <div class="text-4xl font-bold mb-2">
+                                $19
+                                <span class="text-xl font-normal">/month</span>
+                            </div>
+                            <p class="text-primary-200">Billed monthly</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>Unlimited extractions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>Advanced OCR accuracy</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>50MB file size limit</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>Batch processing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>API access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-300 mr-3"></i>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-primary-600 hover:bg-primary-50 py-3 rounded-lg font-semibold transition-colors">
+                            Upgrade to Pro
+                        </button>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                            <p class="text-slate-600 mb-6">For teams and organizations</p>
+                            <div class="text-4xl font-bold text-slate-900 mb-2">
+                                $99
+                                <span class="text-xl font-normal">/month</span>
+                            </div>
+                            <p class="text-slate-500">Per team</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Everything in Pro</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Team collaboration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Custom integrations</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">Advanced analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-slate-700">24/7 dedicated support</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-lg font-medium transition-colors">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feature Comparison -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-16">
+                    <div class="px-8 py-6 border-b border-slate-200">
+                        <h2 class="text-2xl font-bold text-slate-900">Feature Comparison</h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="text-left py-4 px-8 font-semibold text-slate-900">Feature</th>
+                                    <th class="text-center py-4 px-6 font-semibold text-slate-900">Basic</th>
+                                    <th class="text-center py-4 px-6 font-semibold text-slate-900">Pro</th>
+                                    <th class="text-center py-4 px-6 font-semibold text-slate-900">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200" data-mock="true">
+                                <tr>
+                                    <td class="py-4 px-8 text-slate-700">Monthly Extractions</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">10</td>
+                                    <td class="py-4 px-6 text-center text-green-600">Unlimited</td>
+                                    <td class="py-4 px-6 text-center text-green-600">Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-8 text-slate-700">File Size Limit</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">5MB</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">50MB</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">100MB</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-8 text-slate-700">Batch Processing</td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-8 text-slate-700">API Access</td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-8 text-slate-700">Team Collaboration</td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="py-4 px-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">Frequently Asked Questions</h2>
+                    <div class="max-w-3xl mx-auto space-y-6">
+                        <div class="bg-white p-6 rounded-lg border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2">Can I cancel my subscription anytime?</h3>
+                            <p class="text-slate-600">Yes, you can cancel your subscription at any time. You'll continue to have access to premium features until the end of your billing period.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2">What payment methods do you accept?</h3>
+                            <p class="text-slate-600">We accept all major credit cards, PayPal, and bank transfers for Enterprise plans. All payments are processed securely.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2">Is there a free trial for premium plans?</h3>
+                            <p class="text-slate-600">Yes! We offer a 14-day free trial for all premium plans. No credit card required to start your trial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: PremiumSection -->
+    </main>
+
+    <!-- JavaScript for Routing and Interactivity -->
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+            
+            // Router functionality
+            let currentSection = 'home';
+            
+            function showSection(sectionName) {
+                // Hide all sections
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show target section
+                const targetSection = document.getElementById(sectionName + '-section');
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    currentSection = sectionName;
+                }
+                
+                // Update navigation active states
+                updateNavigation(sectionName);
+                
+                // Update URL hash
+                window.location.hash = sectionName;
+            }
+            
+            function updateNavigation(activeSection) {
+                // Desktop navigation
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === '#' + activeSection) {
+                        link.classList.add('text-slate-900');
+                        link.classList.remove('text-slate-600');
+                    } else if (!link.classList.contains('bg-gradient-to-r')) {
+                        link.classList.add('text-slate-600');
+                        link.classList.remove('text-slate-900');
+                    }
+                });
+                
+                // Mobile navigation
+                const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === '#' + activeSection) {
+                        link.classList.add('text-slate-900');
+                        link.classList.remove('text-slate-600');
+                    } else if (!link.classList.contains('bg-gradient-to-r')) {
+                        link.classList.add('text-slate-600');
+                        link.classList.remove('text-slate-900');
+                    }
+                });
+            }
+            
+            // Global navigation function
+            window.navigateTo = function(section) {
+                showLoading();
+                setTimeout(() => {
+                    hideLoading();
+                    showSection(section);
+                }, 300);
+            };
+            
+            function showLoading() {
+                document.getElementById('loading').classList.remove('hidden');
+            }
+            
+            function hideLoading() {
+                document.getElementById('loading').classList.add('hidden');
+            }
+            
+            // Handle navigation clicks
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href^="#"]');
+                if (link) {
+                    e.preventDefault();
+                    const section = link.getAttribute('href').substring(1);
+                    navigateTo(section);
+                }
+            });
+            
+            // Handle hash changes
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash.substring(1);
+                if (hash && hash !== currentSection) {
+                    showSection(hash);
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // File upload functionality
+            const uploadZone = document.getElementById('upload-zone');
+            const fileInput = document.getElementById('file-input');
+            
+            if (uploadZone && fileInput) {
+                uploadZone.addEventListener('click', function() {
+                    fileInput.click();
+                });
+                
+                uploadZone.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    uploadZone.classList.add('border-primary-400', 'bg-primary-50');
+                });
+                
+                uploadZone.addEventListener('dragleave', function(e) {
+                    e.preventDefault();
+                    uploadZone.classList.remove('border-primary-400', 'bg-primary-50');
+                });
+                
+                uploadZone.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    uploadZone.classList.remove('border-primary-400', 'bg-primary-50');
+                    // Handle file drop
+                    console.log('Files dropped:', e.dataTransfer.files);
+                });
+                
+                fileInput.addEventListener('change', function(e) {
+                    // Handle file selection
+                    console.log('Files selected:', e.target.files);
+                });
+            }
+            
+            // Initialize router
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash) {
+                showSection(initialHash);
+            } else {
+                showSection('home');
+            }
+        })();
+    </script>
+</body>
+</html>

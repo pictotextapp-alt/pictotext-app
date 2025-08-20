@@ -1,0 +1,56 @@
+
+--- 2025-08-19T13:23:42.445Z debug
+🪵  Writing logs to "/home/runner/workspace/.config/.wrangler/logs/wrangler-2025-08-19_13-23-42_262.log"
+---
+
+--- 2025-08-19T13:23:42.445Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command started","timestamp":1755609822444,"properties":{"amplitude_session_id":1755609822442,"amplitude_event_id":0,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":["callbackHost"],"argsCombination":"callbackHost","command":"wrangler login","args":{"callbackHost":"<REDACTED>","xJsonConfig":true,"j":true,"browser":true,"callbackPort":8976}}}
+---
+
+--- 2025-08-19T13:23:42.458Z debug
+Failed to load .env file "/home/runner/workspace/.env": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env'
+}
+---
+
+--- 2025-08-19T13:23:42.459Z debug
+Failed to load .env file "/home/runner/workspace/.env.local": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env.local'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env.local'
+}
+---
+
+--- 2025-08-19T13:23:42.491Z log
+
+ ⛅️ wrangler 4.31.0
+───────────────────
+---
+
+--- 2025-08-19T13:23:42.500Z log
+Attempting to login via OAuth...
+---

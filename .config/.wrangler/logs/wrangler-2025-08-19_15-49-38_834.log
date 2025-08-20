@@ -1,0 +1,96 @@
+
+--- 2025-08-19T15:49:39.021Z debug
+🪵  Writing logs to "/home/runner/workspace/.config/.wrangler/logs/wrangler-2025-08-19_15-49-38_834.log"
+---
+
+--- 2025-08-19T15:49:39.021Z log
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+---
+
+--- 2025-08-19T15:49:39.027Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command started","timestamp":1755618579027,"properties":{"amplitude_session_id":1755618579020,"amplitude_event_id":0,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true}}}
+---
+
+--- 2025-08-19T15:49:39.044Z debug
+Failed to load .env file "/home/runner/workspace/.env": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env'
+}
+---
+
+--- 2025-08-19T15:49:39.044Z debug
+Failed to load .env file "/home/runner/workspace/.env.local": Error: ENOENT: no such file or directory, open '/home/runner/workspace/.env.local'
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83700:48)
+    at Object.config (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83718:29)
+    at loadDotEnv (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:83887:61)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:156525:19
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78909:20
+    at maybeAsyncResult (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77082:44)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:78908:18
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:77004:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/runner/workspace/.env.local'
+}
+---
+
+--- 2025-08-19T15:49:39.505Z log
+
+ ⛅️ wrangler 4.31.0
+───────────────────
+---
+
+--- 2025-08-19T15:49:39.568Z warn
+▲ [WARNING] Processing wrangler.toml configuration:
+
+    - Because you've defined a [site] configuration, we're defaulting to "workers-site" for the
+  deprecated `site.entry-point`field.
+      Add the top level `main` field to your configuration file:
+      ```
+      main = "workers-site/index.js"
+      ```
+
+
+---
+
+--- 2025-08-19T15:49:39.574Z log
+
+---
+
+--- 2025-08-19T15:49:39.576Z error
+✘ [ERROR] The entry-point file at "workers-site/index.js" was not found.
+
+
+---
+
+--- 2025-08-19T15:49:39.576Z debug
+Error: The entry-point file at "workers-site/index.js" was not found.
+    at assertEntryPointExists (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:64586:11)
+    at runCustomBuild (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:64577:5)
+    at getEntry (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:86604:9)
+    at Object.handler (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:87182:29)
+    at /home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:84071:20
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at run (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:34295:61)
+    at Object.handler (/home/runner/.npm/_npx/32026684e21afda6/node_modules/wrangler/wrangler-dist/cli.js:84046:13)
+---
+
+--- 2025-08-19T15:49:39.577Z debug
+Metrics dispatcher: Posting data {"deviceId":"1ce2c1bd-d1bc-43f8-94b5-d6de50ca8c7c","event":"wrangler command errored","timestamp":1755618579577,"properties":{"amplitude_session_id":1755618579020,"amplitude_event_id":1,"wranglerVersion":"4.31.0","osPlatform":"Linux","osVersion":"#1-NixOS SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980","nodeVersion":20,"packageManager":"npm","isFirstUsage":false,"configFileType":"toml","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true},"durationMs":581,"durationSeconds":0.581,"durationMinutes":0.009683333333333332,"errorType":"UserError"}}
+---
